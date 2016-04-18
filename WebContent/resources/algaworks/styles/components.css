@@ -44,3 +44,11 @@
 	margin-left: -3px;
 	color: #1e94d2;
 }
+
+/*PAGE TITLE*/
+.aw-page-title{
+	margin:0;
+	padding : 20px 0;
+	font-size : 1.5em;
+	color :  #373737
+}

@@ -10,15 +10,24 @@
 	<f:view contentType="text/html" />
 	
 	<h:head>
-		<title>mobile</title>
+		<title>Livraria</title>
     </h:head>
     
     <h:body>
 
     	<p:growl id="mensagens" autoUpdate="true"/> 
     	
+    	<h:form id="menu" rendered="">
+	    	<p:tabMenu activeIndex="">  
+	    		<p:menuitem value="Livros" />
+	    		<p:menuitem value="Autores" />
+	    		<p:menuitem value="Logout" />
+			</p:tabMenu>
+    	</h:form>
     	
     	<br />
-    	    	
+    	
+    	<ui:insert name="content" />
+    	
    	</h:body>
 </html>
