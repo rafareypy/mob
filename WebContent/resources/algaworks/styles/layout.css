@@ -47,6 +47,7 @@
 
 /* CONTENT */
 .aw-content {
+	padding: 0 15 ;
 	margin-top: 50px;
 	transition: margin-left 0.5s;
 }
