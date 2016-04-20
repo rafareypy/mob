@@ -7,35 +7,38 @@
 
 	<ui:define name="content">
 		<h1 class="aw-page-title">Pesquisa de clientes123</h1>
+
+		<h:form id="form">
+
+			<p:toolbar>
+				<p:toolbarGroup align="right">
+					<p:commandButton value="Novo cliente" />
+				</p:toolbarGroup>
+			</p:toolbar>
+
+
+			<p:dataTable value="#{clientesManager.clientes}" var="cliente"
+				selectionMode="single" selection="#{clientesManager.clienteEdicao}"
+				rowKey="#{cliente.cpf}" style="margin-top: 20px">
+				<p:column headerText="Nome">
+					<h:outputText value="#{cliente.nome}" />
+				</p:column>
+				<p:column headerText="CPF" priority="3">
+					<h:outputText value="#{cliente.cpf}" />
+				</p:column>
+				<p:column headerText="Telefone" priority="6">
+					<h:outputText value="#{cliente.telefone}" />
+				</p:column>
+
+				<f:facet name="footer">
+					<p:commandButton icon="ui-icon-pencil" value="Editar" />
+				</f:facet>
+			</p:dataTable>
+
+		</h:form>
+
+
 	</ui:define>
 
-	<h:form id="form">
-
-		<p:toolbar>
-			<p:toolbarGroup align="right">
-				<p:commandButton value="Novo cliente" />
-			</p:toolbarGroup>
-		</p:toolbar>
-
-
-		<p:dataTable value="#{clientesManager.clientes}" var="cliente"
-			selectionMode="single" selection="#{clientesManager.clienteEdicao}"
-			rowKey="#{cliente.cpf}" style="margin-top: 20px">
-			<p:column headerText="Nome">
-				<h:outputText value="#{cliente.nome}" />
-			</p:column>
-			<p:column headerText="CPF" priority="3">
-				<h:outputText value="#{cliente.cpf}" />
-			</p:column>
-			<p:column headerText="Telefone" priority="6">
-				<h:outputText value="#{cliente.telefone}" />
-			</p:column>
-
-			<f:facet name="footer">
-				<p:commandButton icon="ui-icon-pencil" value="Editar" />
-			</f:facet>
-		</p:dataTable>
-
-	</h:form>
 
 </ui:composition>
