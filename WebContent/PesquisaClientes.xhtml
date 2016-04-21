@@ -6,13 +6,16 @@
 	template="/WEB-INF/templates/Layout.xhtml">
 
 	<ui:define name="content">
-		<h1 class="aw-page-title">Pesquisa de clientes123</h1>
+		<h1 class="aw-page-title">Cadastro de Cliente</h1>
 
 		<h:form id="form">
 
 			<p:toolbar>
 				<p:toolbarGroup align="right">
-					<p:commandButton value="Novo cliente" />
+					<p:commandButton value="Novo cliente" 
+						action="#{clientesManager.novoCliente}"  
+						process="@this"
+						/>
 				</p:toolbarGroup>
 			</p:toolbar>
 
@@ -31,7 +34,9 @@
 				</p:column>
 
 				<f:facet name="footer">
-					<p:commandButton icon="ui-icon-pencil" value="Editar" />
+					<p:commandButton icon="ui-icon-pencil" value="Editar" 
+						action="CadastroCliente?faces-redirect=true"
+					/>
 				</f:facet>
 			</p:dataTable>
 
