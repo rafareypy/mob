@@ -17,13 +17,13 @@
 		<div class="ui-fluid">
 			<h:panelGrid columns="2" layout="grid">
 	            <h:outputLabel for="username" value="Username:" />
-	            <p:inputText id="username" value="" required="true" label="username" />
+	            <p:inputText id="username" value="#{loginBean.nomeUsuario}"  required="true" label="username" />
 	 
 	            <h:outputLabel for="password" value="Password:" />
-	            <p:password id="password" value="" required="true" label="password" />
+	            <p:password id="password" value="#{loginBean.senha}" required="true" label="password" />
 	 
 	            <f:facet name="footer">
-	                <p:commandButton value="Login"  />
+	                <p:commandButton value="Login" action="#{loginBean.login}" />
 	            </f:facet>  
 	        </h:panelGrid>
 	  	</div>

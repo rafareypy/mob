@@ -1,26 +1,8 @@
-r
-*.war
-*.ear
 *.class
-
-# eclipse specific git ignore
-*.pydevproject
-.project
+.DS_Store
+Servers/*
 .metadata
-bin/**
-tmp/**
-tmp/**/*
-*.tmp
-*.bak
-*.swp
-*~.nib
-local.properties
+.settings
 .classpath
-.settings/
-.loadpath
-
-# External tool builders
-.externalToolBuilders/
-
-# Locally stored "Eclipse launch configurations"
-*.launch
+.project
+target/

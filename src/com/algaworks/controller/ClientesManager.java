@@ -11,6 +11,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
+import br.com.pectrus.login.Usuario;
+
 import com.algaworks.model.Cliente;
 import com.algaworks.model.Endereco;
 
@@ -20,6 +22,9 @@ public class ClientesManager implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	
+	private Usuario usuario = new Usuario();
+	
 	private List<Cliente> clientes = new ArrayList<Cliente>();
 	private Cliente clienteEdicao = new Cliente();
 	private Endereco enderecoEdicao;
@@ -85,5 +90,21 @@ public class ClientesManager implements Serializable {
 	public void setEnderecoEdicao(Endereco enderecoEdicao) {
 		this.enderecoEdicao = enderecoEdicao;
 	}
+	
+	public String login() {
+		FacesContext context = FacesContext.getCurrentInstance();
+		if ("admin".equals("admin") && "admin".equals("admin")) {
+			this.usuario.setNome("admin");
+			this.usuario.setDataLogin(new Date());
+			
+			return "/PesquisaClientes?faces-redirect=true";
+		} else {
+			FacesMessage mensagem = new FacesMessage("Usuário/senha inválidos!");
+			mensagem.setSeverity(FacesMessage.SEVERITY_ERROR);
+			context.addMessage(null, mensagem);
+		}
+		return null;
+	}
+
 
 }
