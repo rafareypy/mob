@@ -23,7 +23,8 @@ public class ClientesManager implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	
-	private Usuario usuario = new Usuario();
+	private Usuario usuario = Usuario.newUsuario();
+			
 	
 	private List<Cliente> clientes = new ArrayList<Cliente>();
 	private Cliente clienteEdicao = new Cliente();

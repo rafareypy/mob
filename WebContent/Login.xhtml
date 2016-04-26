@@ -6,15 +6,16 @@
 	template="/WEB-INF/templates/Basic.xhtml">
 	
 	<ui:define name="content">
-		<h1 class="aw-page-title">Login</h1>
+		
 		
 		<h:form id="frm">
 			
-			<p:messages autoUpdate="false" />
+		<p:messages autoUpdate="false" />
 			
 				
 			
-		<div class="ui-fluid">
+		<div class="ui-fluid aw-center">
+			
 			<h:panelGrid columns="2" layout="grid">
 	            <h:outputLabel for="username" value="Username:" />
 	            <p:inputText id="username" value="#{loginBean.nomeUsuario}"  required="true" label="username" />

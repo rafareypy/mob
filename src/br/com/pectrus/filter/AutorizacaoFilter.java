@@ -21,7 +21,7 @@ import br.com.pectrus.login.Usuario;
 public class AutorizacaoFilter implements Filter {
 
 	
-	private Usuario autenticacao = new Usuario();
+	private Usuario autenticacao = Usuario.newUsuario();
 
 	@Override
 	public void doFilter(ServletRequest req, ServletResponse res,
@@ -29,12 +29,12 @@ public class AutorizacaoFilter implements Filter {
 		HttpServletResponse response = (HttpServletResponse) res;
 		HttpServletRequest request = (HttpServletRequest) req;
 		
-		if (!autenticacao.isLogado() && !request.getRequestURI().endsWith("/Login.xhtml")
-				&& !request.getRequestURI().contains("/javax.faces.resource/")) {
-			response.sendRedirect(request.getContextPath() + "/Login.xhtml");
-		} else {
+//		if (!autenticacao.isLogado() && !request.getRequestURI().endsWith("/Login.xhtml")
+//				&& !request.getRequestURI().contains("/javax.faces.resource/")) {
+//			response.sendRedirect(request.getContextPath() + "/Login.xhtml");
+//		} else {
 			chain.doFilter(req, res);
-		}
+//		}
 	}
 
 	@Override

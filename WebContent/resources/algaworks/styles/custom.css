@@ -26,3 +26,10 @@ body {
 		border: none;
 	}
 }
+
+@media (max-width: 640px) {
+	.ui-fluid.aw-center {	
+		left: 17%;
+		top: 32%;
+	}
+}

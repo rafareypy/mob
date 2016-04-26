@@ -13,8 +13,8 @@ import javax.faces.context.FacesContext;
 public class LoginBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	private Usuario usuario = new Usuario();
-
+	private Usuario usuario = Usuario.newUsuario();
+	
 	private String nomeUsuario;
 	private String senha;
 
@@ -25,7 +25,7 @@ public class LoginBean implements Serializable {
 			this.usuario.setNome(this.nomeUsuario);
 			this.usuario.setDataLogin(new Date());
 
-			return "/PesquisaClientes?faces-redirect=true";
+			return "/Votacao?faces-redirect=true";
 		} else {
 			FacesMessage mensagem = new FacesMessage("Usuário/senha inválidos!");
 			mensagem.setSeverity(FacesMessage.SEVERITY_ERROR);
